@@ -1,0 +1,11 @@
+{
+  "name": "herpderp",
+  "title": "Herp Derp for YouTube™",
+  "icon": "data/images/icon.png",
+  "id": "jid1-q98n8ueq0rrwVA@jetpack",
+  "description": "Significantly improves YouTube comments by replacing them with random herps and derps.",
+  "author": "Tanner W. Stokes",
+  "homepage": "http://www.tannr.com",
+  "license": "MIT",
+  "version": "1.4.2"
+}
