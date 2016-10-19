@@ -13,7 +13,7 @@
       "run_at": "document_end",
       "all_frames": true,
       "matches": ["https://apis.google.com/*", "https://plus.googleapis.com/*", "https://www.youtube.com/*"],
-      "js": ["jquery.min.js","herp.js"]
+      "js": ["herp.js"]
     }
   ]
 }
