@@ -1,5 +1,6 @@
-(Make sure node and jpm are installed: npm install -g jpm)
-jpm test
-(May have to specify Developer Edition, otherwise regular Firefox won’t run it)
-jpm run -b /Applications/FirefoxDeveloperEdition.app
-jpm xpi
+# Building for Firefox
+
+1. `npm install -g jpm`
+2. `jpm test`
+3. `jpm run` or `jpm run -b /Applications/FirefoxDeveloperEdition.app`
+4. `jpm xpi`
