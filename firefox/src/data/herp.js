@@ -1,5 +1,3 @@
-debugger;
-
 // selectors for comments
 var selectors = ['.Ct', '.comment-renderer-text-content'];
 
