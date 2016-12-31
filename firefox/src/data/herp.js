@@ -1,5 +1,5 @@
 // selectors for comments
-var selectors = ['.Ct', '.comment-renderer-text-content'];
+var selectors = ['.Ct', '.comment-renderer-text-content', 'yt-formatted-string.content-text'];
 
 // builds a string with random herps and derps
 var derpString = function() {
