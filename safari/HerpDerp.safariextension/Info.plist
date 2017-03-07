@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Author</key>
-	<string>twstokes</string>
+	<string>bart-kneepkens</string>
 	<key>Builder Version</key>
 	<string>12602.4.8</string>
 	<key>CFBundleDisplayName</key>
@@ -13,7 +13,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.1</string>
+	<string>1.2</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>Chrome</key>
@@ -30,6 +30,8 @@
 	</dict>
 	<key>Description</key>
 	<string>Significantly improves YouTube comments by replacing them with random herps and derps.</string>
+	<key>DeveloperIdentifier</key>
+	<string>0000000000</string>
 	<key>ExtensionInfoDictionaryVersion</key>
 	<string>1.0</string>
 	<key>Permissions</key>
