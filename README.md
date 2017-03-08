@@ -24,4 +24,4 @@
 ### Retired versions:
 
 * Opera
-* Safari
+* Safari - (updated, but not available in Safari Extensions Gallery)
