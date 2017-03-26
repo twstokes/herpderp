@@ -14,12 +14,12 @@
 ## Rolling your own
 #### Derp any site!
 
-* Revise the domains that are matched in the manifest.json (Chrome) or index.js (Firefox) files
-* Revise the selectors array in herp.js to match the element that wraps comments (go to town on the JS if you have to)
-* Build some artwork for a nice icon
-* ????
-* Don't profit because you're doing this for humanity
-* Give me a shoutout on the Twitter [@tannerstokes](@tannerstokes)
+1. Revise the domains that are matched in the manifest.json (Chrome) or index.js (Firefox) files
+1. Revise the selectors array in herp.js to match the element that wraps comments (go to town on the JS if you have to)
+1. Build some artwork for a nice icon
+1. ????
+1. Don't profit because you're doing this for humanity
+1. Give me a shoutout on the Twitter [@tannerstokes](@tannerstokes)
 
 ### Retired versions:
 
