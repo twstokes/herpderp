@@ -1,6 +1,6 @@
 # Herp Derp for YouTube (the original)
 
-### [Herp Derp YouTube Comments] (https://www.tannr.com/herp-derp-youtube-comments)
+### [Herp Derp YouTube Comments](https://www.tannr.com/herp-derp-youtube-comments)
 
 > Significantly improves YouTube comments by replacing them with random herps and derps.
 
