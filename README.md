@@ -10,6 +10,7 @@
 
 * Chrome
 * Firefox
+* Safari (not available in Safari Extension Gallery, see [Installing herpderp for Safari](http://www.google.com))
 
 ## Rolling your own
 #### Derp any site!
@@ -24,4 +25,3 @@
 ### Retired versions:
 
 * Opera
-* Safari - (updated, but not available in Safari Extensions Gallery)
