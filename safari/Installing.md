@@ -11,4 +11,4 @@ Installing from source, if you are not enrolled in Apple's Developer program (an
 
 
 ### From a binary
- Download the binary from [here](/safari/HerpDerp.safariextz). Simply double click it to install it into Safari. 
+ Download the binary from [here](/safari/HerpDerp.safariextz) (Thanks to @gggritso for building it). Simply double click it to install it into Safari. 
