@@ -10,7 +10,7 @@
 
 * Chrome
 * Firefox
-* Safari (not available in Safari Extension Gallery, see [Installing herpderp for Safari](http://www.google.com))
+* Safari (not available in Safari Extension Gallery, see [Installing herpderp for Safari](/safari/Installing.md))
 
 ## Rolling your own
 #### Derp any site!
