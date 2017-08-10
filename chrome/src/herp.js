@@ -7,7 +7,7 @@ var derpString = function() {
   var returnString = '';
 
   for (x=0; x<=randomLength; x++) {
-    returnString += (Math.floor(Math.random()*2) ? 'herp ' : 'derp ');
+    returnString += (Math.floor(Math.random()*2) ? 'maoooob ' : 'maoob! ');
   }
   
   return returnString;
