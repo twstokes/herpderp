@@ -10,4 +10,4 @@
 2. `cd src/`
 2. `web-ext run`
 
-Checkout [web-ext](https://github.com/mozilla/web-ext) for more information
+Check out [web-ext](https://github.com/mozilla/web-ext) for more information
