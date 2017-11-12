@@ -16,18 +16,18 @@ var derpString = function() {
 // derps a comment
 var derpComment = function(comment) {
     // preserve the original contents
-    comment.derpOriginal = comment.innerHTML;
+    comment.derpOriginal = comment.textContent;
 
     // revert to the original when clicked
     comment.onclick = function() {
-      comment.innerHTML = comment.derpOriginal;
+      comment.textContent = comment.derpOriginal;
     };
     
     // add derped class
     comment.classList.add('derped');
 
     // change the contents
-    comment.innerHTML = derpString();
+    comment.textContent = derpString();
 }
 
 // build the full selector string
