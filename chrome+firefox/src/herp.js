@@ -31,7 +31,7 @@ var derpComment = function(comment) {
       comment.textContent = comment.derped ? derpString() : comment.derpOriginal;
     };
 
-    // add derped class for the selector
+    // add derped class
     comment.classList.add('derped');
 
     // change the contents
