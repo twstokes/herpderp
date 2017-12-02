@@ -15,12 +15,11 @@ var derpString = function() {
 
 // derps a comment
 var derpComment = function(comment) {
-
     // indicate that this comment is derped
     comment.derped = true;
 
     // preserve the original contents
-    comment.derpOriginal = comment.textContent;
+    comment.derpOriginal = comment.innerHTML;
 
     // switch between derped and underped when clicked
     comment.onclick = function() {

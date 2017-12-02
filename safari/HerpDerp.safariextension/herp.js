@@ -15,12 +15,19 @@ var derpString = function() {
 
 // derps a comment
 var derpComment = function(comment) {
+    // indicate that this comment is derped
+    comment.derped = true;
+
     // preserve the original contents
     comment.derpOriginal = comment.innerHTML;
 
     // revert to the original when clicked
     comment.onclick = function() {
-      comment.innerHTML = comment.derpOriginal;
+      // invert derp value
+      comment.derped = !comment.derped;
+
+      // change contents to either a new random derp string or the original comment
+      comment.innerHTML = comment.derped ? derpString() : comment.derpOriginal;
     };
     
     // add derped class
