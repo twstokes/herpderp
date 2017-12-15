@@ -9,7 +9,6 @@ var derpString = function() {
   for (x=0; x<=randomLength; x++) {
     returnString += (Math.floor(Math.random()*2) ? 'herp ' : 'derp ');
   }
-
   return returnString;
 }
 
@@ -19,7 +18,7 @@ var derpComment = function(comment) {
     comment.derped = true;
 
     // preserve the original contents
-    comment.derpOriginal = comment.innerHTML;
+    comment.derpOriginal = comment.textContent;
 
     // switch between derped and underped when clicked
     comment.onclick = function() {
