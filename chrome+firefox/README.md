@@ -4,7 +4,7 @@
 2. Browse to `src` directory and choose it
 3. Extensions -> Pack extension...
 
-# Building Firefox Webextension
+# Building Firefox WebExtension
 
 1. `$ npm install --global web-ext`
 2. `cd src/`
