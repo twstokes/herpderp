@@ -12,7 +12,7 @@
     {
       "run_at": "document_end",
       "all_frames": true,
-      "matches": ["https://apis.google.com/*", "https://plus.googleapis.com/*", "https://www.youtube.com/*"],
+      "matches": ["https://apis.google.com/*", "https://plus.googleapis.com/*", "https://www.youtube.com/watch*"],
       "js": ["herp.js"]
     }
   ]

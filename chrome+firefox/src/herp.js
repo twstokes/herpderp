@@ -14,18 +14,18 @@ function derpString() {
 function derpComment(comment) {
   // preserve the original contents
   comment.derpOriginal = comment.textContent;
-  comment.clicked = false;
-  // revert to the original when clicked
-    comment.onclick = () => {
-        comment.textContent = comment.derpOriginal;
-        comment.clicked = true;
-    };
+  // Swap between the two when clicked
+  comment.onclick = () => {
+      comment.clicked = !comment.clicked;
+      comment.textContent = comment.clicked ? comment.derpOriginal : comment.derpString;
+  };
   // add derped class
   comment.classList.add("derped");
   // Create a derp string for this comment
   comment.derpString = derpString();
   // change the contents
   comment.textContent = comment.derpString;
+  comment.clicked = false;
 };
 
 function checkComment(comment) {
@@ -33,12 +33,24 @@ function checkComment(comment) {
   if ((comment.clicked && comment.textContent == comment.derpOriginal) ||
       (!comment.clicked && comment.textContent == comment.derpString))
       return;
-  // Otherwise, fix the comment. The only case of malformed comment encountered so far is this case:
-  // In the case of the new comment being appended after the derp string, just grab it and put it in the derpOriginal variable
-  let idx = comment.derpString.length;
-  comment.derpOriginal = comment.textContent.substring(idx);
-  comment.textContent = comment.textContent.substring(0, idx);
-  comment.clicked = false;
+  // Otherwise, fix the comment. The only case of malformed comment encountered so far are these two cases:
+  if (comment.textContent.indexOf(comment.derpString) !== -1) {
+    // In the case of the new comment being appended after the derp string, just grab it and put it in the derpOriginal variable
+    let idx = comment.derpString.length;
+    comment.derpOriginal = comment.textContent.substring(idx);
+    comment.textContent = comment.textContent.substring(0, idx);
+    comment.clicked = false;
+  }
+  else if (comment.textContent.indexOf(comment.derpOriginal) !== -1) {
+    // Same issue but the comment was appended after derpOriginal
+    let idx = comment.derpOriginal.length;
+    comment.derpOriginal = comment.textContent.substring(idx);
+    comment.textContent = comment.derpString;
+    comment.clicked = false;
+  }
+  else {
+    console.error("Never-encountered malformed comment:" + comment.textContent + " || " + comment.derpOriginal + " || " + comment.derpString);
+  }
 }
 
 function init(commentsSection) {
@@ -52,10 +64,11 @@ function init(commentsSection) {
         .map(sel => sel + ".derped")
         .join(", ");
 
-    // Watch all the things
-    let mutationConfig = {attributes: true, childList: true, subtree: false};
+    // Only watch for child list changes, as we're watching the comments container
+    let mutationConfig = {attributes: false, childList: true, subtree: true};
 
     // Create a MutationObserver
+    // This object will monitor the comments for DOM changes
     let observer = new MutationObserver((mutationList) => {
         // Check that everything's fine with the already derped comments
         // This is necessary because youtube does a lot of wizardry with comments in-between videos
@@ -71,6 +84,7 @@ function init(commentsSection) {
 // This needs to be done since comments are added in the DOM through js at an undetermined point through Youtube's execution.
 function checkCommentsLoaded() {
     setTimeout((evt) => {
+        // This selector is awful, but Youtube re-uses a lot of the DOM (the selector for the comments is re-used across a bunch of pages) so we need the exact path to the comments to match
         let commentsSection = document.querySelector("html body ytd-app div#content.style-scope.ytd-app ytd-page-manager#page-manager.style-scope.ytd-app ytd-watch.style-scope.ytd-page-manager.hide-skeleton div#top.style-scope.ytd-watch div#container.style-scope.ytd-watch div#main.style-scope.ytd-watch ytd-comments#comments.style-scope.ytd-watch ytd-item-section-renderer#sections.style-scope.ytd-comments div#contents.style-scope.ytd-item-section-renderer");
         if (commentsSection != null)
             init(commentsSection);
