@@ -71,7 +71,6 @@ function init(commentsSection) {
 // This needs to be done since comments are added in the DOM through js at an undetermined point through Youtube's execution.
 function checkCommentsLoaded() {
     setTimeout((evt) => {
-        console.log("Checking if comments are loaded");
         let commentsSection = document.querySelector("html body ytd-app div#content.style-scope.ytd-app ytd-page-manager#page-manager.style-scope.ytd-app ytd-watch.style-scope.ytd-page-manager.hide-skeleton div#top.style-scope.ytd-watch div#container.style-scope.ytd-watch div#main.style-scope.ytd-watch ytd-comments#comments.style-scope.ytd-watch ytd-item-section-renderer#sections.style-scope.ytd-comments div#contents.style-scope.ytd-item-section-renderer");
         if (commentsSection != null)
             init(commentsSection);
