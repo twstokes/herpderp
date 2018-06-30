@@ -12,6 +12,10 @@
 * Firefox
 * Safari (not available in Safari Extension Gallery, see [Installing herpderp for Safari](/safari/Installing.md))
 
+## Development
+* `yarn install`
+* Configure your editor for [Prettier](https://prettier.io/) and [ESLint](https://eslint.org/)
+
 ## Rolling your own
 #### Derp any site!
 
