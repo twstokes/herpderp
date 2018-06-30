@@ -1,0 +1,16 @@
+{
+  "name": "herpderp",
+  "version": "1.0.0",
+  "description": "Herp Derp for YouTube",
+  "main": "herp.js",
+  "repository": "https://github.com/twstokes/herpderp.git",
+  "author": "Tanner Stokes <tanner@tannr.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^5.0.1",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.13.0",
+    "prettier": "1.13.7"
+  }
+}
