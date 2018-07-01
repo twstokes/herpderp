@@ -1,4 +1,5 @@
 # Herp Derp for YouTube (the original)
+[![codebeat badge](https://codebeat.co/badges/4962d348-9b34-4063-bea1-258eb1697571)](https://codebeat.co/projects/github-com-twstokes-herpderp-master)
 
 ### [Herp Derp YouTube Comments](https://www.tannr.com/herp-derp-youtube-comments)
 
