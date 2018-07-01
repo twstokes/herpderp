@@ -1,7 +1,7 @@
 import derpElement from "./herp";
 
-const checkComment = commentNode => {
-  const c = commentNode;
+const checkComment = commentElement => {
+  const c = commentElement;
   // if everything is fine, return
   if (
     (c.clicked && c.textContent === c.derpOriginal) ||
@@ -63,7 +63,7 @@ const checkCommentsLoaded = () => {
     const commentsSection = document.querySelector(
       "html body ytd-app div#content.style-scope.ytd-app ytd-page-manager#page-manager.style-scope.ytd-app ytd-watch.style-scope.ytd-page-manager.hide-skeleton div#top.style-scope.ytd-watch div#container.style-scope.ytd-watch div#main.style-scope.ytd-watch ytd-comments#comments.style-scope.ytd-watch ytd-item-section-renderer#sections.style-scope.ytd-comments div#contents.style-scope.ytd-item-section-renderer"
     );
-    if (commentsSection != null) init(commentsSection);
+    if (commentsSection !== null) init(commentsSection);
     else checkCommentsLoaded();
   }, 1000);
 };
