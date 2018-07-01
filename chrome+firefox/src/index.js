@@ -3,11 +3,8 @@ import derpElement from "./herp";
 const checkComment = commentElement => {
   const c = commentElement;
   // if everything is fine, return
-  if (
-    (c.clicked && c.textContent === c.derpOriginal) ||
-    (!c.clicked && c.textContent === c.derpString)
-  )
-    return;
+  if (c.clicked && c.textContent === c.derpOriginal) return;
+  if (!c.clicked && c.textContent === c.derpString) return;
 
   // otherwise, fix the comment
   // the only case of malformed comment encountered so far are these two cases:
