@@ -3,16 +3,21 @@
   "name": "Herp Derp for YouTube™",
   "version": "1.6.5",
   "homepage_url": "https://www.tannr.com",
-  "description": "Significantly improves YouTube comments by replacing them with random herps and derps.",
+  "description":
+    "Significantly improves YouTube comments by replacing them with random herps and derps.",
   "icons": {
-     "48": "herp48.png",
-     "128": "herp128.png"
+    "48": "herp48.png",
+    "128": "herp128.png"
   },
   "content_scripts": [
     {
       "run_at": "document_end",
       "all_frames": true,
-      "matches": ["https://apis.google.com/*", "https://plus.googleapis.com/*", "https://www.youtube.com/"],
+      "matches": [
+        "https://apis.google.com/*",
+        "https://plus.googleapis.com/*",
+        "https://www.youtube.com/"
+      ],
       "js": ["herp.js"]
     }
   ]

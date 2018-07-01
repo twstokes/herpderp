@@ -1,64 +1,65 @@
-// builds a string with random herps and derps
-function derpString() {
-  const maxLength = 20;
-  const randomLength = Math.floor(Math.random() * maxLength) + 1;
+// returns a random int from 1 to max
+const randomInt = max => Math.floor(Math.random() * max);
 
-  let string = "";
-  for (let x = 0; x <= randomLength; x++) {
-    string += Math.floor(Math.random() * 2) ? "herp " : "derp ";
-  }
-  return string;
-}
+// builds a string with random herps and derps
+const derpString = (length = 20) => {
+  const randomLength = randomInt(length) + 1;
+  const randomDerp = randomInt(2) ? "herp" : "derp";
+
+  return Array.from({ length: randomLength }, () => randomDerp).join(" ");
+};
 
 // derps a comment
-function derpComment(commentNode) {
-  const comment = commentNode;
+const derpComment = element => {
+  const c = element;
   // preserve the original contents
-  comment.derpOriginal = comment.textContent;
-  // Swap between the two when clicked
-  comment.onclick = () => {
-    comment.clicked = !comment.clicked;
-    comment.textContent = comment.clicked
-      ? comment.derpOriginal
-      : comment.derpString;
+  c.derpOriginal = c.textContent;
+  // swap between the two when clicked
+  c.onclick = () => {
+    c.clicked = !c.clicked;
+    c.textContent = c.clicked ? c.derpOriginal : c.derpString;
   };
-  // add derped class
-  comment.classList.add("derped");
-  // Create a derp string for this comment
-  comment.derpString = derpString();
-  // change the contents
-  comment.textContent = comment.derpString;
-  comment.clicked = false;
-}
 
-function checkComment(commentNode) {
-  const comment = commentNode;
-  // If everything is fine, return
+  // add derped class
+  c.classList.add("derped");
+  // create a derp string for this comment
+  c.derpString = derpString();
+  // change the contents
+  c.textContent = c.derpString;
+  c.clicked = false;
+};
+
+const checkComment = commentNode => {
+  const c = commentNode;
+  // if everything is fine, return
   if (
-    (comment.clicked && comment.textContent === comment.derpOriginal) ||
-    (!comment.clicked && comment.textContent === comment.derpString)
+    (c.clicked && c.textContent === c.derpOriginal) ||
+    (!c.clicked && c.textContent === c.derpString)
   )
     return;
-  // Otherwise, fix the comment. The only case of malformed comment encountered so far are these two cases:
-  if (comment.textContent.indexOf(comment.derpString) !== -1) {
-    // In the case of the new comment being appended after the derp string, just grab it and put it in the derpOriginal variable
-    const idx = comment.derpString.length;
-    comment.derpOriginal = comment.textContent.substring(idx);
-    comment.textContent = comment.textContent.substring(0, idx);
-    comment.clicked = false;
+
+  // otherwise, fix the comment
+  // the only case of malformed comment encountered so far are these two cases:
+  if (c.textContent.indexOf(c.derpString) !== -1) {
+    // in the case of the new comment being appended after the derp string,
+    // just grab it and put it in the derpOriginal variable
+    const idx = c.derpString.length;
+    c.derpOriginal = c.textContent.substring(idx);
+    c.textContent = c.textContent.substring(0, idx);
+    c.clicked = false;
     return;
   }
 
-  if (comment.textContent.indexOf(comment.derpOriginal) !== -1) {
+  if (c.textContent.indexOf(c.derpOriginal) !== -1) {
     // Same issue but the comment was appended after derpOriginal
-    const idx = comment.derpOriginal.length;
-    comment.derpOriginal = comment.textContent.substring(idx);
-    comment.textContent = comment.derpString;
-    comment.clicked = false;
+    const idx = c.derpOriginal.length;
+    c.derpOriginal = c.textContent.substring(idx);
+    c.textContent = c.derpString;
+    c.clicked = false;
   }
-}
+};
 
-function init(commentsSection) {
+const init = commentsSection => {
   // selectors for comments
   const selectors = ["#content-text"];
   // build the full selector string
@@ -81,11 +82,11 @@ function init(commentsSection) {
   });
 
   observer.observe(commentsSection, mutationConfig);
-}
+};
 
 // Check every 1s if comments are loaded or not. Once they are, the timeout stops until the user leaves youtube or reloads the page.
 // This needs to be done since comments are added in the DOM through js at an undetermined point through Youtube's execution.
-function checkCommentsLoaded() {
+const checkCommentsLoaded = () => {
   setTimeout(() => {
     // This selector is awful, but Youtube re-uses a lot of the DOM (the selector for the comments is re-used across a bunch of pages) so we need the exact path to the comments to match
     const commentsSection = document.querySelector(
@@ -94,6 +95,6 @@ function checkCommentsLoaded() {
     if (commentsSection != null) init(commentsSection);
     else checkCommentsLoaded();
   }, 1000);
-}
+};
 
 checkCommentsLoaded();
