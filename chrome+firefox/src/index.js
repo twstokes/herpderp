@@ -1,4 +1,4 @@
-import derpComment from "./herp";
+import derpElement from "./herp";
 
 const checkComment = commentNode => {
   const c = commentNode;
@@ -49,7 +49,7 @@ const init = commentsSection => {
     // This is necessary because youtube does a lot of wizardry with comments in-between videos
     document.querySelectorAll(checkSelectorString).forEach(checkComment);
     // Derp all un-derped comments
-    document.querySelectorAll(derpSelectorString).forEach(derpComment);
+    document.querySelectorAll(derpSelectorString).forEach(derpElement);
   });
 
   observer.observe(commentsSection, mutationConfig);

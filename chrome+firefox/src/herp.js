@@ -9,8 +9,8 @@ const derpString = (length = 20) => {
   return Array.from({ length: randomLength }, () => randomDerp).join(" ");
 };
 
-// derps a comment
-const derpComment = element => {
+// herp derps an element
+const derpElement = element => {
   const c = element;
   // preserve the original contents
   c.derpOriginal = c.textContent;
@@ -29,4 +29,4 @@ const derpComment = element => {
   c.clicked = false;
 };
 
-export default derpComment;
+export default derpElement;
