@@ -1,10 +1,16 @@
-# Building for Chrome
+## Development
+* `yarn install`
+* Configure your editor for [Prettier](https://prettier.io/) and [ESLint](https://eslint.org/)
+* `yarn watch`
+* `yarn build`
+
+## Building for Chrome
 
 1. Extensions -> Load unpacked extension...
 2. Browse to `src` directory and choose it
 3. Extensions -> Pack extension...
 
-# Building Firefox WebExtension
+## Building Firefox WebExtension
 
 1. `$ npm install --global web-ext`
 2. `cd src/`
