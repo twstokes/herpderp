@@ -18,7 +18,7 @@
         "https://plus.googleapis.com/*",
         "https://www.youtube.com/"
       ],
-      "js": ["herp.js"]
+      "js": ["main.js"]
     }
   ]
 }
