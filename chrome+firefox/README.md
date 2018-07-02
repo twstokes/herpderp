@@ -14,6 +14,7 @@
 
 1. `$ npm install --global web-ext`
 2. `cd dist/`
-2. `web-ext run`
+3. `web-ext run` (to test before building)
+4. `web-ext build`
 
 Check out [web-ext](https://github.com/mozilla/web-ext) for more information
