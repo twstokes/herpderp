@@ -7,7 +7,7 @@
   "author": "Tanner Stokes <tanner@tannr.com>",
   "license": "MIT",
   "scripts": {
-    "build": "webpack --mode=production",
+    "build": "webpack --mode=none",
     "develop": "webpack --watch"
   },
   "devDependencies": {
