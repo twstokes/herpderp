@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Herp Derp for YouTube™",
-  "version": "1.6.6",
+  "version": "1.6.7",
   "homepage_url": "https://www.tannr.com",
   "description":
     "Significantly improves YouTube comments by replacing them with random herps and derps.",
@@ -11,12 +11,12 @@
   },
   "content_scripts": [
     {
-      "run_at": "document_end",
+      "run_at": "document_idle",
       "all_frames": true,
       "matches": [
         "https://apis.google.com/*",
         "https://plus.googleapis.com/*",
-        "https://www.youtube.com/"
+        "https://www.youtube.com/*"
       ],
       "js": ["main.js"]
     }
