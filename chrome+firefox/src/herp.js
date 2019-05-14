@@ -4,9 +4,9 @@ const randomInt = max => Math.floor(Math.random() * max);
 // builds a string with random herps and derps
 const derpString = (length = 20) => {
   const randomLength = randomInt(length) + 1;
-  const randomDerp = randomInt(2) ? "herp" : "derp";
+  const randomDerp = () => randomInt(2) ? "herp" : "derp";
 
-  return Array.from({ length: randomLength }, () => randomDerp).join(" ");
+  return Array.from({ length: randomLength }, randomDerp).join(" ");
 };
 
 // herp derps an element
