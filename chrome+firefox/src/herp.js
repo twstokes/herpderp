@@ -2,11 +2,12 @@
 const randomInt = max => Math.floor(Math.random() * max);
 
 // builds a string with random herps and derps
-const derpString = (length = 20) => {
-  const randomLength = randomInt(length) + 1;
-  const randomDerp = () => randomInt(2) ? "herp" : "derp";
+const derpString = (length = 20, text) => {
+  const randomDerp = () => (randomInt(2) ? "herp" : "derp");
+  let derpedLength = text ? text.split(" ").length : randomInt(length) + 1;
+  let derpedText = Array.from({ length: derpedLength }, randomDerp).join(" ");
 
-  return Array.from({ length: randomLength }, randomDerp).join(" ");
+  return derpedText.charAt(0).toUpperCase() + derpedText.slice(1) + ".";
 };
 
 // herp derps an element
@@ -23,7 +24,7 @@ const derpElement = element => {
   // add derped class
   c.classList.add("derped");
   // create a derp string for this comment
-  c.derpString = derpString();
+  c.derpString = derpString(20, c.textContent);
   // change the contents
   c.textContent = c.derpString;
   c.clicked = false;
